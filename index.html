@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>World Clock</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">WORLD CLOCK</p>
+        <h1>Time around the world</h1>
+        <p class="subtitle">A live view of the current time in your favorite time zones.</p>
+      </div>
+      <button id="themeToggle" class="icon-button" type="button" aria-label="Toggle theme">☀️</button>
+    </header>
+
+    <section class="toolbar" aria-label="Clock controls">
+      <label class="search-box">
+        <span aria-hidden="true">⌕</span>
+        <input id="zoneSearch" type="search" placeholder="Search cities or time zones…" autocomplete="off">
+      </label>
+      <button id="addClock" class="primary-button" type="button">＋ Add time zone</button>
+    </section>
+
+    <section id="clockGrid" class="clock-grid" aria-live="polite"></section>
+    <p id="emptyState" class="empty-state" hidden>No matching time zones found.</p>
+
+    <footer>
+      <span id="localInfo"></span>
+      <span>Updates every second</span>
+    </footer>
+  </main>
+
+  <dialog id="zoneDialog">
+    <form method="dialog" class="dialog-card">
+      <div class="dialog-header">
+        <div>
+          <p class="eyebrow">ADD CLOCK</p>
+          <h2>Choose a time zone</h2>
+        </div>
+        <button class="close-button" value="cancel" aria-label="Close">×</button>
+      </div>
+      <label class="dialog-search">
+        <span>⌕</span>
+        <input id="dialogSearch" type="search" placeholder="Search time zones…" autocomplete="off">
+      </label>
+      <div id="zoneOptions" class="zone-options"></div>
+    </form>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>
